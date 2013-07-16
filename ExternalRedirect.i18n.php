@@ -1,5 +1,5 @@
 <?php
-/* ExternalRedirect - MediaWiki extension to allow external redirects.
+/* ExternalRedirect - MediaWiki extension to allow redirects to external sites.
  * Copyright (C) 2013 Davis Mosenkovs
  *
  * This program is free software; you can redistribute it and/or
