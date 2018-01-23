@@ -1,5 +1,11 @@
-ExternalRedirect - MediaWiki extension to allow redirects to external sites.
-Copyright (C) 2013 Davis Mosenkovs
+Copyright (C) 2018 Matthew Miller
+
+
+Based on ExternalRedirect (a MediaWiki extension to allow redirects to
+arbitrary external sites) which is Copyright (C) 2013 Davis Mosenkovs, but
+heavily, heavily modified.
+
+
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License

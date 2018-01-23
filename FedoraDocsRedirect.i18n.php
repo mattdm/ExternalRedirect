@@ -1,5 +1,9 @@
 <?php
-/* ExternalRedirect - MediaWiki extension to allow redirects to external sites.
+/* FedoraDocsRedirect - MediaWiki extension to allow redirects to https://docs.fedoraproject.org/
+ * Copyright (C) 2018 Matthew Miller
+ *
+ * Based heavily on
+ * ExternalRedirect - MediaWiki extension to allow redirects to external sites.
  * Copyright (C) 2013 Davis Mosenkovs
  *
  * This program is free software; you can redistribute it and/or
@@ -20,20 +24,15 @@
 
 $messages = array();
 $messages['en'] = array(
-    'externalredirect-text' => 'This page redirects to an external site: [$1 $1]',
-    'externalredirect-invalidurl' => '== ExternalRedirect Error ==
-Redirection URL is invalid.',
-    'externalredirect-denied' => '== ExternalRedirect Error ==
-External redirection is not enabled for this namespace or page.',
-    'externalredirect-denied-url' => 'Intended redirection URL: [$1 $1]',
-);
-
-$messages['de'] = array(
-    'externalredirect-text' => 'Diese Seite leitet auf die folgende externe Webseite um: [$1 $1]',
+    'fedoradocsredirect-text' => 'This page redirects to the Fedora Docs site: [$1 $1]',
+    'fedoradocsredirect-invalidsite' => '== Fedora Docs Redirect Error ==
+You can only redirect to https://docs.fedoraproject.org/',
+    'fedoradocsredirect-invalidurl' => '== Fedora Docs Redirect Error ==
+This does not look like a URL. You can only redirect to https://docs.fedoraproject.org/',
 );
 
 
 $magicWords = array();
 $magicWords['en'] = array(
-    'externalredirect' => array( 0, 'externalredirect' ),
+    'fedoradocs' => array( 0, 'fedoradocs' ),
 );
