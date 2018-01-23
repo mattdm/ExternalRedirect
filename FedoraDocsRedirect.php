@@ -49,6 +49,9 @@ function wfFedoraDocsRedirectRender($parser, $url = '') {
     $parsed = wfParseUrl($url);
     if ($parsed) {
         if ($parsed['host'] === 'docs.fedoraproject.org') {
+            /* Note that the redirect URL omits any "query" portion.
+             * This is intentional to discourage shenanigans.
+             */
             header('Location: https://docs.fedoraproject.org' . $parsed['path'] . $parsed['fragment'],TRUE,301);
             return wfMessage('fedoradocsredirect-text', $url)->text();
         } else {
