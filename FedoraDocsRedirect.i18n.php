@@ -28,7 +28,7 @@ $messages['en'] = array(
     'fedoradocsredirect-invalidsite' => '== Fedora Docs Redirect Error ==
 You can only redirect to https://docs.fedoraproject.org/',
     'fedoradocsredirect-invalidurl' => '== Fedora Docs Redirect Error ==
-This does not look like a URL. You can only redirect to https://docs.fedoraproject.org/',
+This does not look like a valid URL. You can only redirect to https://docs.fedoraproject.org/',
 );
 
 

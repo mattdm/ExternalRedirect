@@ -31,7 +31,7 @@ $wgExtensionCredits[ 'parserhook' ][] = array(
     'author' => 'Matthew Miller',
     'url' => 'https://github.com/mattdm/FedoraDocsRedirect',
     'description' => 'Allows redirects to https://docs.fedoraproject.org/ (only)',
-    'version' => '0.0.1',
+    'version' => '0.0.2',
 );
 
 $wgExtensionMessagesFiles['FedoraDocsredirect'] = dirname( __FILE__ ) . '/FedoraDocsRedirect.i18n.php';
@@ -48,7 +48,12 @@ function wfFedoraDocsRedirectRender($parser, $url = '') {
     $parser->disableCache();
     $parsed = wfParseUrl($url);
     if ($parsed) {
-        if ($parsed['host'] === 'docs.fedoraproject.org') {
+        if (strpos($parsed['path'],"-") or
+            strpos($parsed['path']," ") or
+            strpos($parsed['path'],"@")) {
+            return wfMessage('fedoradocsredirect-invalidurl')->text();
+        }
+        else if ($parsed['host'] === 'docs.fedoraproject.org') {
             /* Note that the redirect URL omits any "query" portion.
              * This is intentional to discourage shenanigans.
              */
@@ -58,6 +63,5 @@ function wfFedoraDocsRedirectRender($parser, $url = '') {
             return wfMessage('fedoradocsredirect-invalidsite')->text();
         }
     } else {
-        return wfMessage('fedoradocsredirect-invalidurl')->text();
     }
 }
