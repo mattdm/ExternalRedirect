@@ -48,8 +48,8 @@ function wfFedoraDocsRedirectRender($parser, $url = '') {
     $parser->disableCache();
     $parsed = wfParseUrl($url);
     if ($parsed) {
-        if (strpos($parsed['path'],"-") or
-            strpos($parsed['path']," ") or
+        if (strpos($parsed['path']," ") or
+            strpos($parsed['path'],":") or
             strpos($parsed['path'],"@")) {
             return wfMessage('fedoradocsredirect-invalidurl')->text();
         }
